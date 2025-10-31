@@ -2,10 +2,15 @@ import Image from "next/image";
 import Navbar from "./components/Navbar";
 import { CircleSmall, Download } from "lucide-react";
 import About from "./components/About";
+import Projects from "./components/RecentWorks";
+import Contact from "./components/Contact";
 
 export default function Home() {
   return (
+
+    
     <div className="w-full max-w-9xl mx-auto p-10  bg-main">
+      
       <div className="lg:flex">
  <div className="z-40 flex-none w-full lg:w-[30%] xl:w-[30%]">
       <div className="lg:sticky top-10 profile-card-bg text-white overflow-hidden rounded-3xl shadow-lg w-full flex flex-col items-start p-6 xl:p-8">
@@ -70,19 +75,17 @@ Frontend Developer</h3>
       {/* Section 3: Work */}
       <section
         id="projects"
-        className="min-h-screen flex flex-col justify-center items-center "
+        className="flex flex-col lg:justify-center  sm:px-6 lg:px-8 "
       >
-        <h2 className="text-3xl font-semibold mb-2">My Work</h2>
-        <p className="text-gray-600">Showcase of selected projects here...</p>
+       <Projects />
       </section>
 
       {/* Section 4: Contact */}
       <section
         id="contact"
-        className="min-h-screen flex flex-col justify-center items-center "
+        className=" flex flex-col lg:justify-center  sm:px-6 lg:px-8  "
       >
-        <h2 className="text-3xl font-semibold mb-2">Let’s Connect</h2>
-        <p className="text-gray-600">Contact form or social links here.</p>
+        <Contact />
       </section>
     </main>
      

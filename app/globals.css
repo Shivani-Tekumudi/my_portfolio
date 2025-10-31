@@ -9,11 +9,30 @@
   --foreground: #171717;
 }
 
+@theme {
+  --color-primary: #6D2849;
+  --color-secondary: #f4e1f1;
+  --color-accent: #ffb6c1;
+  --color-brand: #EB7885;
+  --color-grey:#676666;
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+    --background: #0a0a0a;
+    --foreground: #ededed;
+    --primary-color: #6D2849;
+    --primary-color2:#66254D;
+    --primary-color3:#6A274A;
+    --primary-color4: #AE3F60;
+    --secondary-color:#6E6464;
+    --btn-bg:#8E3458;
+    --card-bg1: rgba(253, 193, 157, 0.59);
+    --card-bg2: rgba(252, 158, 156, 0.37);
+    --card-bg3: rgba(221, 96, 120, 0.31)
 }
 
 @media (prefers-color-scheme: dark) {
@@ -42,7 +61,9 @@ body {
 
 }
 .bg-main{
-  background-image: linear-gradient(to right bottom, #fff6ef, #ffeee2, #ffe7d6, #ffdfca, #ffd7bf);
+  background: #fffdfc;
+background: linear-gradient(167deg, rgba(255, 253, 252, 1) 0%, rgba(255, 246, 239, 1) 52%, rgba(255, 215, 191, 1) 98%);
+background-attachment: fixed
 }
 .profile-card-bg{
  background: rgba(253, 193, 157, 5.83);
@@ -145,4 +166,17 @@ border: 1px solid #FC9E9C;
 .card-bg3{
 background-color: var(--card-bg3);
 border: 1px solid #E06177;
+}
+
+
+.skill-card{
+border-style: solid;
+    border-width: 4px;
+    border: 3px solid var(--primary-color);
+    border-radius: 5px;
+    padding: 45px 18px;
+    border-radius: 62px !important;
+}
+button{
+  cursor: pointer;
 }

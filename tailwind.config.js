@@ -10,6 +10,7 @@ module.exports = {
         primary: "#6D2849",   // main brand color
         secondary: "#f4e1f1",
         accent: "#ffb6c1",
+        brand:"#EB7885"
       },
       fontFamily: {
         sans: ["var(--font-ibm-plex-sans-jp)", "var(--font-geist-sans)", "sans-serif"],
