@@ -11,7 +11,7 @@
 
 @theme {
   --color-primary: #6D2849;
-  --color-secondary: #f4e1f1;
+  --color-secondary: #ffefe4;
   --color-accent: #ffb6c1;
   --color-brand: #EB7885;
   --color-grey:#676666;
@@ -38,7 +38,7 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
-    --foreground: #ededed;
+    --foreground: #FFFBF8;
     --primary-color: #6D2849;
     --primary-color2:#66254D;
     --primary-color3:#6A274A;
@@ -138,11 +138,11 @@ background: linear-gradient(180deg,rgba(142, 52, 88, 1) 0%, rgba(224, 98, 119, 1
 }
 .hero-section{
  padding-top: 11rem;
- padding-bottom: 10rem !important;
+ /* padding-bottom: 10rem !important; */
 }
    
 section{
-  padding-bottom: 8rem;
+  padding-bottom: 10rem;
 }
 .section-description{
 line-height: 45px;
@@ -179,4 +179,19 @@ border-style: solid;
 }
 button{
   cursor: pointer;
+}
+
+
+
+@media screen and (max-width: 932px) {
+  .hero-section{
+ padding-top: 4rem !important;
+ /* padding-bottom: 10rem !important; */
+}
+section{
+  padding-bottom: 4rem;
+}
+}
+.form-shadow{
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, .1), 0 4px 6px -2px rgba(0, 0, 0, .05);
 }

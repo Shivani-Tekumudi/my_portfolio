@@ -1,5 +1,6 @@
 import { Geist, Geist_Mono,IBM_Plex_Sans_JP } from "next/font/google";
 import "./globals.css";
+import ScrollTrigger from "./components/ScrollTrigger";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -26,7 +27,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
    <body className={`${ibmPlexSansJP.variable} ${geistSans.variable} antialiased`}>
-
+  {/* <ScrollTrigger /> */}
         {children}
       </body>
     </html>

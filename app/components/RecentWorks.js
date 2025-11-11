@@ -100,7 +100,7 @@ const [activeTab, setActiveTab] = useState(0);
         </TabList>
         <div className="pt-5">
               <TabContent index={0} activeTab={activeTab}>
-               <div className="grid grid-cols-2 gap-10 text-primary">
+               <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 text-primary">
             
            {
                     imgArr.map((ele,id) => {
@@ -118,7 +118,7 @@ const [activeTab, setActiveTab] = useState(0);
             </TabContent>
            
         <TabContent index={1} activeTab={activeTab}>
-          <div className="grid grid-cols-2 gap-10 text-primary">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 text-primary">
             
            {
                     imgArr.map((ele,id) => {

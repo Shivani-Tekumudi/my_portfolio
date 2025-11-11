@@ -1,73 +1,26 @@
-import SkillsCard from "./SkillsCard";
+import Skills from "./Skills";
 
 export default function About(){
 
   const imgArr1 = ['./logos/html5.svg','./logos/html5.svg'];
-  const imgArr=[{
-                  id:0,
-                  img:'./logos/html5.svg',
-                  title: 'HTML 5'
-                  },
-                  {
-                  id:1,
-                  img:'./logos/css.svg',
-                  title: 'CSS'
-                  },
-                   {
-                  id:2,
-                  img:'./logos/js.svg',
-                  title: 'JavaScript'
-                  },
-                   {
-                  id:3,
-                  img:'./logos/react.svg',
-                  title: 'React.js'
-                  },
-                   {
-                  id:4,
-                  img:'./logos/Next.svg',
-                  title: 'Next.js'
-                  },
-                   {
-                  id:5,
-                  img:'./logos/jquery.svg',
-                  title: 'Jquery'
-                  },
-                   
-                   {
-                  id:6,
-                  img:'./logos/typeScript.svg',
-                  title: 'TypeScript'
-                  },
-                  {
-                  id:7,
-                  img:'./logos/MaterialUI.svg',
-                  title: 'Material UI'
-                  },
-                   {
-                  id:8,
-                  img:'./logos/Bootstrap.svg',
-                  title: 'Bootstrap'
-                  },
-                   {
-                  id:9,
-                  img:'./logos/figma.svg',
-                  title: 'Figma'
-                  },
-                  {
-                  id:10,
-                  img:'./logos/adobe_illustrator.svg',
-                  title: 'Adobe Illustrator'
-                  },
-                  {
-                  id:11,
-                  img:'./logos/php.svg',
-                  title: 'PHP'
-                  },
+  
 
 
+                  const container = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15, // delay between cards
+      },
+    },
+  };
 
-                  ]
+  const item = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.4, ease: "easeOut" } },
+  };
+
 
     return(
          <div className="sm:px-6 lg:px-8">
@@ -82,7 +35,7 @@ export default function About(){
 
          
           <div className="flex justify-end">
-     <ol className=" overflow-hidden space-y-8">
+     <ol className=" overflow-hidden w-full space-y-8">
       <li className="relative flex-1 ">
           <div   className="flex items-center font-medium w-full  ">
               <span className=" bg-transparent border-2 border-transparent rounded-full flex justify-center items-center mr-3 text-sm text-white lg:w-10 lg:h-10">
@@ -90,7 +43,7 @@ export default function About(){
                   <span className="block w-2.5 h-2.5 rounded-full bg-main"></span>
                 </span>
               </span>
-              <div className="block">
+              <div className="block w-full">
                       <div className="card-bg1  border border-rose-300 rounded-2xl p-6 md:p-8 shadow-sm  xl:w-[750px]">
                 <div className="text-lg font-bold pb-2 text-primary4">
                   2015 - 2019
@@ -119,7 +72,7 @@ export default function About(){
   
 <div className="flex justify-end">
   
-     <ol className=" overflow-hidden space-y-8">
+     <ol className=" overflow-hidden w-full space-y-8">
       <li className="relative flex-1 after:content-['']  after:w-0.5 after:h-full  after:bg-transparent after:inline-block after:absolute after:-bottom-26 lg:after:-bottom-24 after:left-3 lg:after:left-5 after:border-l-2 after:border-pink-900 after:border-dashed">
           <div   className="flex items-center font-medium w-full  ">
               <span className=" bg-transparent border-2 border-transparent rounded-full flex justify-center items-center mr-3 text-sm text-white lg:w-10 lg:h-10">
@@ -127,7 +80,7 @@ export default function About(){
                   <span className="block w-2.5 h-2.5 rounded-full bg-main"></span>
                 </span>
               </span>
-              <div className="block">
+              <div className="block w-full">
                       <div className="card-bg2 text-primary border border-rose-300 rounded-2xl p-6 md:p-8 shadow-sm xl:w-[750px]">
                 <div className="text-lg font-bold pb-2 text-primary4">
                   2024 - Present
@@ -148,7 +101,7 @@ export default function About(){
                   <span className="block w-6 h-6 rounded-full bg-primary shadow-[0_6px_20px_rgba(0,0,0,0.15)] flex items-center justify-center">
                   <span className="block w-2.5 h-2.5 rounded-full bg-main"></span>
                 </span>
-              </span>              <div className="block">
+              </span>              <div className="block w-full">
                      <div className="card-bg3 text-primary border border-rose-300 rounded-2xl p-6 md:p-8 shadow-sm xl:w-[750px]">
                 <div className="text-lg font-bold pb-2 text-primary4">
                   2021 - 2024
@@ -173,19 +126,7 @@ export default function About(){
          <h2 className="text-4xl  lg:text-3xl font-semibold text-primary mb-5 mt-5 mb-2">Core Skills</h2>
       </div>
 
-      <div className="grid grid-cols-6 gap-10 text-primary">
-
-
-        {
-          imgArr.map((ele,id) => {
-            return(
-              <SkillsCard key={id} img={ele.img} title={ele.title}/>
-            )
-          })
-        }
-  
- 
-</div>
+     <Skills />
        
         </div></div>
     )

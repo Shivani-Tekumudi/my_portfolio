@@ -4,41 +4,71 @@ import { useState,useEffect } from "react";
 import { Moon, moon, sun } from "lucide-react";
 
 export default function Navbar(){
-    const [active,setActive] = useState('home');
+   const [active, setActive] = useState("home");
 
-    useEffect(() => {
+  useEffect(() => {
+    const sections = document.querySelectorAll("section");
+    const headerOffset = 100; // height of your fixed header/navbar
 
-        const sections = document.querySelectorAll("section");
+    const handleScroll = () => {
+      let current = "";
+      const scrollPos = window.scrollY + headerOffset + 1;
 
-        const handleScroll = () =>
-             { 
-                let current = ""; 
-                sections.forEach((section) => { 
-                    const sectionTop = section.offsetTop;
+      sections.forEach((section) => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.offsetHeight;
+        if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+          current = section.getAttribute("id");
+        }
+      });
 
-                     if (scrollY >= sectionTop - 200) { current = section.getAttribute("id"); } });
-                     
-                     setActive(current || "home"); };
+      setActive(current || "home");
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // run once on mount to check if user reloaded mid-page
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
 
-                     window.addEventListener("scroll", handleScroll); 
-                     
-                     return () => window.removeEventListener("scroll", handleScroll);
+  useEffect(() => {
+    const handleHashChange = () => {
+      const hash = window.location.hash;
+      if (hash) {
+        const target = document.querySelector(hash);
+        if (target) {
+          const headerOffset = 100; 
+          const elementPosition = target.getBoundingClientRect().top + window.scrollY;
+          const offsetPosition = elementPosition - headerOffset;
 
-    },[])
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth",
+          });
+        }
+      }
+    };
+
+    // Handle clicks or page reload with hash
+    window.addEventListener("hashchange", handleHashChange);
+    handleHashChange(); // run once if reloaded with hash
+
+    return () => window.removeEventListener("hashchange", handleHashChange);
+  }, []);
 
 
 
 
     return (
-         <nav className="fixed  hidden sm:ml-6 sm:block backdrop-blur-lg flex justify-center gap-6 py-3">
+         <nav className="fixed  hidden sm:ml-6 xl:block backdrop-blur-lg flex justify-center gap-6 py-3">
   <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
     <div className="relative flex h-16 items-center justify-between">
      
       <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
         
-        <div className="hidden sm:ml-6 sm:block">
-          <div className="flex space-x-13">
+        <div className="hidden sm:ml-6 lg:block">
+          <div className="flex lg:space-x-6 xl:space-x-13">
            
 
            {["home", "about", "projects", "contact"].map((item) => (

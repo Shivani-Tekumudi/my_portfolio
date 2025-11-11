@@ -1,4 +1,5 @@
-
+// my-portfolio
+// uncc pwij qxxw mlyk
 "use client";
 
 import { useState } from "react";
@@ -42,7 +43,7 @@ const [form, setForm] = useState({ name: "", email: "", message: "", honey: "" }
   };
 
     return(
-         <div className="sm:px-6 lg:px-8">
+         <div className="sm:px-6 lg:px-8"  >
         <h2 className="text-4xl  lg:text-3xl font-semibold text-primary mb-5 mt-4 mb-2">Contact</h2>
         <p className="text-light section-description text-2xl text-gray-600">
          Want to know more about me, tell me about your project or just to say hello? Drop me a line and I will get back as soon as possible.
@@ -51,7 +52,7 @@ const [form, setForm] = useState({ name: "", email: "", message: "", honey: "" }
          <form
       id="contact"
       onSubmit={handleSubmit}
-      className="max-w-md mx-auto p-6 bg-gray-900 text-white rounded-xl space-y-4"
+      className="max-w-md form-shadow mx-auto p-6 mt-9 bg-white text-primary border border-primary-2 rounded-xl space-y-4"
     >
       <h2 className="text-2xl font-bold text-center mb-4">Contact Me</h2>
 
@@ -61,7 +62,7 @@ const [form, setForm] = useState({ name: "", email: "", message: "", honey: "" }
         placeholder="Your Name"
         value={form.name}
         onChange={handleChange}
-        className="w-full p-2 rounded bg-gray-800 focus:outline-none"
+        className="w-full bg-secondary p-2 rounded  focus:outline-none"
       />
 
       <input
@@ -70,7 +71,7 @@ const [form, setForm] = useState({ name: "", email: "", message: "", honey: "" }
         placeholder="Your Email"
         value={form.email}
         onChange={handleChange}
-        className="w-full p-2 rounded bg-gray-800 focus:outline-none"
+        className="w-full p-2 bg-secondary rounded  focus:outline-none"
       />
 
       <textarea
@@ -79,7 +80,7 @@ const [form, setForm] = useState({ name: "", email: "", message: "", honey: "" }
         rows="4"
         value={form.message}
         onChange={handleChange}
-        className="w-full p-2 rounded bg-gray-800 focus:outline-none"
+        className="w-full p-2 rounded bg-secondary focus:outline-none"
       ></textarea>
 
       {/* Honeypot (anti-bot hidden field) */}
@@ -95,7 +96,7 @@ const [form, setForm] = useState({ name: "", email: "", message: "", honey: "" }
       <button
         type="submit"
         disabled={cooldown}
-        className="w-full bg-blue-600 hover:bg-blue-700 p-2 rounded font-semibold"
+        className="w-full btn btn-primary  text-white p-2 rounded font-semibold"
       >
         Send Message
       </button>
