@@ -3,6 +3,7 @@
 import ProjectCard from "./ProjectCard";
 import { Tabs,TabList,Tabtrigger,TabContent } from "./Tab";
 import { useState } from "react";
+import { projects } from "@/data/projects";
 
 export default function Projects(){
 const [activeTab, setActiveTab] = useState(0);
@@ -11,72 +12,7 @@ const [activeTab, setActiveTab] = useState(0);
     setActiveTab(index);
   }
 
-  const imgArr=[{
-                  id:0,
-                  type:"developing",
-                   img:'/project/dashboard.jpg',
-                  title: 'Internal Admin Dashboard',
-                  role: 'Front-End Developer',
-                  description:'Designed and developed a responsive dashboard interface for internal team use. Focused on improving usability and simplifying data management.'
-                  },
-                  {
-                  id:1,
-                  type:"developing",
-                  img:'/project/expense-tracker.jpg',
-                  title: 'Expense Tracker',
-                  role: 'UI/UX Designer & Front-End Developer',
-                  description:'Developed a responsive dashboard interface for internal team use. Focused on improving usability and simplifying data management.'
-                  },
-                    {
-                  id:2,
-                  type:"developing",
-                  img:'/project/myplotpic-admin.jpg',
-                  title: 'Expense Tracker',
-                  role: 'UI/UX Designer & Front-End Developer',
-                  description:'Developed a responsive dashboard interface for internal team use. Focused on improving usability and simplifying data management.'
-                  },
-                    {
-                  id:3,
-                  type:"designing",
-                  img:'/project/design-test.jpg',
-                  title: 'Expense Tracker',
-                  role: 'UI/UX Designer & Front-End Developer',
-                  description:'Developed a responsive dashboard interface for internal team use. Focused on improving usability and simplifying data management.'
-                  },
-                    {
-                  id:4,
-                  type:"designing",
-                  img:'/project/design-ag-land-project.jpg',
-                  title: 'Expense Tracker',
-                  role: 'UI/UX Designer & Front-End Developer',
-                  description:'Developed a responsive dashboard interface for internal team use. Focused on improving usability and simplifying data management.'
-                  },
-                   {
-                  id:5,
-                  type:"designing",
-                  img:'/project/design-plot-project.jpg',
-                  title: 'Expense Tracker',
-                  role: 'UI/UX Designer & Front-End Developer',
-                  description:'Developed a responsive dashboard interface for internal team use. Focused on improving usability and simplifying data management.'
-                  },
-                    {
-                  id:6,
-                  type:"designing",
-                  img:'/project/design-flat-project.jpg',
-                  title: 'Expense Tracker',
-                  role: 'UI/UX Designer & Front-End Developer',
-                  description:'Developed a responsive dashboard interface for internal team use. Focused on improving usability and simplifying data management.'
-                  },
-                    {
-                  id:7,
-                  type:"designing",
-                  img:'/project/design-apartment-project.jpg',
-                  title: 'Expense Tracker',
-                  role: 'UI/UX Designer & Front-End Developer',
-                  description:'Developed a responsive dashboard interface for internal team use. Focused on improving usability and simplifying data management.'
-                  },
-
-                  ]
+ 
 
  
  
@@ -103,10 +39,10 @@ const [activeTab, setActiveTab] = useState(0);
                <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 text-primary">
             
            {
-                    imgArr.map((ele,id) => {
-                      if(ele.type=="developing")
+                    projects.map((ele,idx) => {
+                      if(ele.category=="developing")
                       return(
-                        <ProjectCard  key={id} img={ele.img} title={ele.title} role={ele.role}  desc={ele.description}/>
+                        <ProjectCard  key={idx} id={ele.id} img={ele.image} title={ele.title} role={ele.role}  desc={ele.shortDesc}/>
                       )
                     })
                   }
@@ -121,10 +57,10 @@ const [activeTab, setActiveTab] = useState(0);
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 text-primary">
             
            {
-                    imgArr.map((ele,id) => {
-                      if(ele.type=="designing")
+                    projects.map((ele,idx) => {
+                      if(ele.category=="designing")
                       return(
-                        <ProjectCard  key={id} img={ele.img} title={ele.title} role={ele.role}  desc={ele.description}/>
+                       <ProjectCard  key={idx} id={ele.id} img={ele.image} title={ele.title} role={ele.role}  desc={ele.shortDesc}/>
                       )
                     })
                   }

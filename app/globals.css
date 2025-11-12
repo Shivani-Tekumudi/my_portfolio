@@ -15,6 +15,8 @@
   --color-accent: #ffb6c1;
   --color-brand: #EB7885;
   --color-grey:#676666;
+  --color-card-bg2:rgba(252, 158, 156, 0.37);
+  --color-card-bg3: rgba(221, 96, 120, 0.31)
 }
 
 @theme inline {

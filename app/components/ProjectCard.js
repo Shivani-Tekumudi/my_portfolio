@@ -1,8 +1,9 @@
 import Image from "next/image";
+import Link from "next/link";
 
 
 
-export default function ProjectCard({img,title,role,desc}){
+export default function ProjectCard({id,img,title,role,desc}){
     return(
         <div className="max-w-sm bg-transparentder border  border-accent rounded-lg shadow-lg ">
 <div className="m-3">
@@ -17,9 +18,9 @@ export default function ProjectCard({img,title,role,desc}){
                />
     </a></div>
     <div className="p-5">
-        <a href="#">
+        <Link  href={`/projectdetails/${id}`}>
             <h5 className="mb-2 text-2xl font-bold tracking-tight text-grey">{title}</h5>
-        </a>
+        </Link>
         <p className="mb-0 font-normal text-grey ">
             <b>Role</b>: {role}   
            </p>

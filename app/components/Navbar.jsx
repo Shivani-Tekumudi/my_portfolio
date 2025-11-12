@@ -61,7 +61,7 @@ export default function Navbar(){
 
 
     return (
-         <nav className="fixed  hidden sm:ml-6 xl:block backdrop-blur-lg flex justify-center gap-6 py-3">
+         <nav className="fixed  hidden sm:ml-6 xl:block backdrop-blur-lg flex justify-center gap-6 py-3 xl:w-[66%]">
   <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
     <div className="relative flex h-16 items-center justify-between">
      
