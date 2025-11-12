@@ -6,12 +6,17 @@ import Projects from "./components/RecentWorks";
 import Contact from "./components/Contact";
 import AnimatedSection from "./components/AnimatedSection";
 import Hero from "./components/Hero";
+import Head from 'next/head';
 
 export default function Home() {
   return (
 
-    
-    <div className="w-full max-w-9xl mx-auto p-10  bg-main">
+    <>
+     <Head>
+       <title>Shivani-Tekumudi-Portfolio</title>
+        <meta name="description" content="My page description" />
+      </Head>
+       <div className="w-full max-w-9xl mx-auto p-10  bg-main">
    
       <div className="lg:flex ">
     
@@ -88,5 +93,7 @@ Frontend Developer</h3>
     </main>
      
     </div></div>
+    </>
+   
   );
 }
