@@ -57,7 +57,7 @@ export default function  Hero(){
                   </motion.div>
                   <motion.div  variants={item}  className=" lg:mx-2 mt-5 sm:mt-0">
          <a  href="/Shivani_Resume.pdf"
-  download="Shivani_Resume.pdf"className="btn-contact rounded-full px-5 py-2 text-lg font-medium text-white hover:bg-white/5 hover:text-white"> 
+  download="Shivani_Resume.pdf" className="btn-contact rounded-full px-5 py-2 text-lg font-medium text-white hover:bg-white/5 hover:text-white"> 
          <Download className="inline"/><span>Download CV </span></a>
                   </motion.div>
 
