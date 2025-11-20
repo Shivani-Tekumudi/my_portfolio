@@ -4,77 +4,193 @@
 @tailwind utilities;
 
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme {
-  --color-primary: #6D2849;
-  --color-secondary: #ffefe4;
+:root{
+  /* core */
+  --bg: #fffdfc;            /* page surface / subtle warm white */
+  --text: #171717;
   --color-accent: #ffb6c1;
-  --color-brand: #EB7885;
-  --color-grey:#676666;
-  --color-card-bg2:rgba(252, 158, 156, 0.37);
-  --color-card-bg3: rgba(221, 96, 120, 0.31)
+    --color-grey: #676666;
+  /* brand colors (your originals) */
+  --primary-color: #6D2849;
+  --primary-color2: #66254D;
+  --primary-color3: #6A274A;
+  --primary-color4: #AE3F60;
+  --btn-bg: #8E3458;
+  --bg-mode:#FFD9C2;
+  --color-input:#ffefe4;
+
+  /* cards & surfaces */
+  --card-bg1: rgba(253,193,157,0.59);
+  --card-bg2: rgba(252,158,156,0.37);
+  --card-bg3: rgba(221,96,120,0.31);
+
+  /* gradients */
+  --bg-main-gradient: linear-gradient(
+    167deg,
+    rgba(255,253,252,1) 0%,
+    rgba(255,246,239,1) 52%,
+    rgba(255,215,191,1) 98%
+  );
+  --color-brand: #eb7885;
+  
+  /* profile card */
+   --profile-card-bg-st: #fffdfc;
+  --profile-card-bg-gradient: linear-gradient(
+  157deg,
+  rgba(253, 193, 157, 0.58) 0%,
+  rgba(252, 158, 154, 0.51) 76%);
+  --profile-card-border: rgba(194,85,109,0.18);
+  --profile-card-shadow: rgba(0,0,0,0.1) 0px 10px 15px -3px, rgba(0,0,0,0.05) 0px 4px 6px -2px;
+
+  /* nav */
+  --nav-active-text: #171717;
+  --nav-active-bg: linear-gradient(178deg, rgba(253,193,157,.22) 0%, rgba(252,157,158,.16) 76%);
+  --nav-active-border: rgba(254,192,157,.54);
+  --nav-inactive-text: #171717;
+
+  /* buttons */
+  --btn-primary-bg: var(--btn-bg);
+  --btn-primary-hover-shadow: rgba(0,0,0,0.2) 0px 12px 28px 0px, rgba(0,0,0,0.1) 0px 2px 4px 0px, rgba(255,255,255,0.05) 0px 0px 0px 1px inset;
+
+  --btn-contact-bg-1: rgba(253, 157, 156, 1);
+  --btn-contact-bg-2: rgba(224, 98, 119, 1);
+  --btn-contact-border: rgba(252, 158, 156, 1);
+  --btn-contact-shadow: rgba(238, 125, 136, 0.4);
+
+  /* hover */
+  --btn-contact-hover-1: rgba(142, 52, 88, 1);
+  --btn-contact-hover-2: rgba(224, 98, 119, 1);
+
+
+
+    --skill-card-border: var(--primary-color);
+  --skill-card-bg: rgba(255, 255, 255, 0.8);
+  --skill-card-shadow:
+    rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+    rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+
+    --section-description-color: #3e3e3e;
+
+  /* surfaces */
+  --surface-bg: #fffdfc; /* replace bg-white uses with bg-surface class */
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-    --background: #0a0a0a;
-    --foreground: #ededed;
-    --primary-color: #6D2849;
-    --primary-color2:#66254D;
-    --primary-color3:#6A274A;
-    --primary-color4: #AE3F60;
-    --secondary-color:#6E6464;
-    --btn-bg:#8E3458;
-    --card-bg1: rgba(253, 193, 157, 0.59);
-    --card-bg2: rgba(252, 158, 156, 0.37);
-    --card-bg3: rgba(221, 96, 120, 0.31)
+/* ---------- 2) DARK mode overrides ---------- */
+html[data-theme='dark']{
+  --bg: #141013;         /* soft charcoal */
+  --text: #F6ECEB;
+   --color-accent: #4e313f;
+    --color-grey: #dccece;
+  /* tweak brand colors for dark */
+  --primary-color: #ffdfec;
+  --primary-color2: #ffa9d3;
+  --primary-color3: #e972a9;
+  --primary-color4: #D76BA1;
+  --btn-bg: #C85C92;
+  --color-input:#68646636;
+ 
+  /* cards */
+  --card-bg1: rgba(253,193,157,0.20);
+  --card-bg2: rgba(252,158,156,0.15);
+  --card-bg3: rgba(221,96,120,0.15);
+
+  /* gradients - dark variant */
+  --bg-main-gradient: linear-gradient(
+    167deg,
+    rgba(25,20,25,1) 0%,
+    rgba(35,28,35,1) 52%,
+    rgba(55,38,55,1) 98%
+  );
+
+   --color-brand: var(--btn-primary-bg);
+
+  /* profile card */
+ --profile-card-bg-st: #fffdfc;
+    --profile-card-bg-gradient: linear-gradient(157deg, rgba(24, 19, 17, 0.58) 0%, rgb(50 36 50) 76%);
+  --profile-card-border: rgba(255,168,190,0.15);
+  --profile-card-shadow: rgba(0,0,0,0.35) 0px 10px 20px -3px, rgba(0,0,0,0.25) 0px 4px 6px -2px;
+
+  /* nav */
+  --nav-active-text: #ffffff;
+  --nav-active-bg: linear-gradient(178deg, rgba(130,80,110,.35) 0%, rgba(80,50,75,.25) 76%);
+  --nav-active-border: rgba(255,168,190,0.25);
+  --nav-inactive-text: #e6e6e6;
+
+  /* buttons */
+  --btn-primary-bg: #6b3a51;
+  --btn-primary-hover-shadow: rgba(0,0,0,0.45) 0px 12px 28px 0px, rgba(0,0,0,0.25) 0px 2px 4px 0px;
+
+  --btn-contact-bg-1: rgba(142, 52, 88, 1);
+  --btn-contact-bg-2: rgba(208, 82, 102, 1);
+  --btn-contact-border: rgba(200, 88, 108, 1);
+  --btn-contact-shadow: rgba(150, 60, 80, 0.4);
+ --bg-mode:var(--btn-primary-bg);
+  /* hover */
+  --btn-contact-hover-1: rgba(208, 82, 102, 1);
+  --btn-contact-hover-2: rgba(142, 52, 88, 1);
+
+    /* SKILL CARD */
+  --skill-card-border: rgba(255,168,190,0.35);
+  --skill-card-bg: rgba(40, 30, 40, 0.8);
+  --skill-card-shadow:
+    rgba(0, 0, 0, 0.35) 0px 10px 20px -3px,
+    rgba(0, 0, 0, 0.25) 0px 4px 6px -2px;
+
+
+    /* section desc */
+
+    --section-description-color: #827181;
+  /* surfaces */
+  --surface-bg: #1a141a;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #FFFBF8;
-    --primary-color: #6D2849;
-    --primary-color2:#66254D;
-    --primary-color3:#6A274A;
-    --primary-color4: #AE3F60;
-    --secondary-color:#6E6464;
-    --btn-bg:#8E3458;
-    --card-bg1: rgba(253, 193, 157, 0.59);
-    --card-bg2: rgba(252, 158, 156, 0.37);
-    --card-bg3: rgba(221, 96, 120, 0.31)
-  }
+/* ---------- 3) apply core variables ---------- */
+html, body {
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.18s linear, color 0.18s linear;
+}
+.spinner-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-sans), sans-serif !important;
- scroll-behavior: smooth;
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid #ccc;
+  border-top: 4px solid #333;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 .card{
 
 }
-.bg-main{
-  background: #fffdfc;
-background: linear-gradient(167deg, rgba(255, 253, 252, 1) 0%, rgba(255, 246, 239, 1) 52%, rgba(255, 215, 191, 1) 98%);
-background-attachment: fixed
+.bg-main {
+  background: var(--bg-main-gradient);
+  background-attachment: fixed;
 }
 .profile-card-bg{
- background: rgba(253, 193, 157, 5.83);
-background: linear-gradient(157deg,rgba(253, 193, 157, 0.58) 0%, rgba(252, 158, 154, 0.51) 76%);
-border: 1px solid #c2556d2f;
-box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+ background: var(--profile-card-bg-st);
+background: var(--profile-card-bg-gradient);
+border: var(--profile-card-border);
+  box-shadow: var(--profile-card-shadow);
 }
 .bg-primary{
   background-color: var(--primary-color) !important;
+}
+.bg-surface {
+  background: var(--surface-bg);
 }
 .text-primary{
   color: var(--primary-color) !important;
@@ -92,52 +208,67 @@ box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6
   color:  var(--secondary-color);
 }
 
-.btn{
-padding: 16px 16px;
-border-radius: 37px;
-} 
-.btn-primary{
-background-color: var(--btn-bg) !important;
-width: 100%;
-font-weight: 600;
-font-size: 1.2rem;
+.btn {
+  padding: 16px 16px;
+  border-radius: 37px;
 }
-.btn-primary:hover{
-  cursor:  pointer !important;
-box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+
+.btn-primary {
+  background-color: var(--btn-primary-bg) !important;
+  width: 100%;
+  font-weight: 600;
+  font-size: 1.2rem;
+  transition: 0.25s ease;
+  color: #fff;
 }
+
+.btn-primary:hover {
+  cursor: pointer !important;
+  box-shadow: var(--btn-primary-hover-shadow);
+}
+
 
 .nav-active{
-background: RGBA(253, 193, 157, 0.3);
-background: linear-gradient(178deg, rgba(253, 193, 157, .22) 0%, rgb(252 157 158 / 16%) 76%);
-border: 1px solid rgba(254, 192, 157, 0.54);
-color: #171717;
+color: var(--nav-active-text);
+  background: var(--nav-active-bg);
+  border: 1px solid var(--nav-active-border);
+  transition: 0.2s ease;
+  border-radius: 8px;
 }
-.nav-inactive{
-border: 1px solid #00000000 !important
+.nav-inactive {
+  color: var(--nav-inactive-text);
+  transition: 0.2s ease;
 }
 
-.nav-inactive:hover{
-  background: RGBA(253, 193, 157, 0.3);
-background: linear-gradient(178deg, rgba(253, 193, 157, .22) 0%, rgb(252 157 158 / 16%) 76%);
-border: 1px solid rgba(254, 192, 157, 0.54) !important;
-color: #171717;
+.nav-inactive:hover {
+  opacity: 0.7;
 }
 
 .mode{
-background-color: #FFD9C2;
+background-color: var(--bg-mode);
 color: var(--primary-color2);
 }
-.btn-contact{
-background: #FD9D9C;
-background: linear-gradient(180deg,rgba(253, 157, 156, 1) 0%, rgba(224, 98, 119, 1) 76%);
-box-shadow: rgba(238, 125, 136, 0.4) 0px 8px 24px;
-border: 1px solid #FC9E9C;
+.btn-contact {
+  background: linear-gradient(
+    180deg,
+    var(--btn-contact-bg-1) 0%,
+    var(--btn-contact-bg-2) 76%
+  );
+  border: 1px solid var(--btn-contact-border);
+  box-shadow: var(--btn-contact-shadow) 0px 8px 24px;
+  transition: all 0.25s ease;
 }
-.btn-contact:hover{
-background: #8E3458;
-background: linear-gradient(180deg,rgba(142, 52, 88, 1) 0%, rgba(224, 98, 119, 1) 76%) !important;
+
+
+.btn-contact:hover {
+  background: linear-gradient(
+    180deg,
+    var(--btn-contact-hover-1) 0%,
+    var(--btn-contact-hover-2) 76%
+  ) !important;
+  cursor: pointer;
 }
+
 .hero-section{
  padding-top: 11rem;
  /* padding-bottom: 10rem !important; */
@@ -149,7 +280,7 @@ section{
 .section-description{
 line-height: 45px;
 letter-spacing: 1px;
-color: var(--background);
+color: var(--section-description-color);
 }
 .card{
   padding: 20px;
@@ -170,20 +301,22 @@ background-color: var(--card-bg3);
 border: 1px solid #E06177;
 }
 
-
-.skill-card{
-border-style: solid;
-    border-width: 4px;
-    border: 3px solid var(--primary-color);
-    border-radius: 5px;
-    padding: 45px 18px;
-    border-radius: 62px !important;
+.skill-card {
+  border: 3px solid var(--skill-card-border);
+  border-radius: 62px !important;
+  padding: 45px 18px;
+  background: var(--skill-card-bg);
+  box-shadow: var(--skill-card-shadow);
+  transition: 0.25s ease;
 }
+
 button{
   cursor: pointer;
 }
 
-
+.bg-brand {
+    background-color: var(--color-brand) !important;
+}
 
 @media screen and (max-width: 932px) {
   .hero-section{
@@ -196,4 +329,13 @@ section{
 }
 .form-shadow{
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, .1), 0 4px 6px -2px rgba(0, 0, 0, .05);
+}
+.border-accent {
+    border-color: var(--color-accent);
+}
+.text-grey {
+    color: var(--color-grey);
+}
+.bg-secondary {
+    background-color: var(--color-input);
 }

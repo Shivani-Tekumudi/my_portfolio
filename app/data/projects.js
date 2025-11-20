@@ -7,183 +7,295 @@ export const projects = [
   category: "developing",
   title: "Internal Admin Dashboard",
   role: "Front-End Developer",
-  image: "/project/dashboard.jpg",
+  image: "/project/dashboard.svg",
   shortDesc:
-    "A secure admin dashboard built for managing cab rental listings, featuring authentication, approval workflows, and real-time activity tracking.",
+    "A focused admin dashboard for cab rental bookings with login access, listing controls, and transparent action tracking.",
   longDesc:
-    "Developed an internal admin dashboard for a cab rental service using Next.js and TailwindCSS. The system enables multiple admins to log in, review rental listings, and perform actions like approving or rejecting requests. It also includes an Admin Tracker that logs every activity for transparent operations. The focus was on scalability, UI performance, and intuitive user experience.",
+    "Developed a functional internal admin dashboard for a cab rental service using Next.js and TailwindCSS. Admins can log in, view rental listings, and take actions like approving, rejecting, or reviewing booking details. The project includes an Admin Tracker module that records each action to maintain accountability and smooth internal workflow.",
 
   tools: ["Next.js", "React", "TailwindCSS", "Context API", "Framer Motion"],
   year: 2025,
 
   projectDetails: {
-    overview:
-      "The Internal Admin Dashboard is a front-end application designed for cab rental administrators to manage user bookings efficiently. The goal was to create a responsive, user-friendly system where admins can authenticate, view rental records, approve or reject bookings, and track their actions. Built with Next.js for fast rendering and TailwindCSS for a consistent, modern interface.",
+  problemStatement:
+    "Cab rental admins needed a simple interface to review booking requests quickly and record their actions in one place. The existing process was manual and slow.",
 
-    researchAndPlanning:
-      "Before development, I defined the key requirements — authentication flow, listing management, and action logging. Created a basic **system flow diagram** outlining how data moves between login, dashboard, and admin tracker modules. This planning ensured modular development and smoother state management.",
-    
-    architectureAndSetup:
-      "The project is structured using the Next.js app router for scalability. Each section (Login, Dashboard, Admin Tracker) is modularized within the `app/components` folder. Context API handles global states such as authentication and activity logs. TailwindCSS was configured for responsive layouts, and Framer Motion introduced lightweight UI animations for better transitions. Simulated APIs were created using local data files for demonstration.",
-    
-    coreFeaturesOrKeySolutions: [
-      "🔐 **Authentication Flow** – Static multi-admin login system simulating real access control.",
-      "•  **Rental Listing Management** – Displays booking details like user name, car, start and return dates, and cost.",
-      "⚙️ **Action Controls** – Approve, Reject, or View bookings directly from the dashboard.",
-      "•  **Admin Tracker** – Real-time log of every action taken by each admin with timestamps.",
-      "•  **Responsive UI** – Optimized layout for both desktop and tablet views.",
-      "⚡ **Performance Optimization** – Implemented minimal re-render strategy via memoization and functional updates."
-    ],
+  systemFlow:
+    "Admin → Login → Dashboard → View Listings → Approve/Reject/View Details → Activity stored in Admin Tracker.",
 
-    challengesAndLearnings:
-      "A major challenge was ensuring the admin tracker updated seamlessly without unnecessary component re-renders. Solved it by designing a unidirectional data flow with React Context and useReducer. Another learning was planning UI hierarchy early to avoid prop drilling issues as the app scaled.",
+  myResponsibilities:
+    "Built the entire front-end including login flow, listing UI, action handlers, activity tracker logic, and responsive layout.",
 
-    testingAndFeedback:
-      "Conducted manual testing across different admin scenarios and screen sizes. Verified that all actions (approve, reject, edit) correctly reflected in the Admin Tracker. Focused on visual consistency, button state validation, and data integrity after simulated API updates. Peer review highlighted the clarity of workflow and responsive design.",
+  overview:
+    "The Internal Admin Dashboard is a front-end application designed for cab rental administrators to manage bookings. It provides a clean interface for reviewing rental records and recording admin actions.",
+  
+  researchAndPlanning:
+    "Identified essential modules: login, listing table, and tracker. Created a small system flow to maintain clarity and avoid unnecessary features.",
 
-    deploymentOrFinalPrototype: {
-      link: "https://your-live-project-link.com",
-      github: "https://github.com/your-repo"
-    },
+  architectureAndSetup:
+    "Implemented using Next.js App Router and modular components. Context API manages authentication and admin logs. Local JSON simulates API data.",
 
-    reflectionAndFutureScope:
-      "In the next phase, I plan to integrate real backend APIs for persistent data, implement role-based permissions (super-admin vs staff), and add analytics for tracking approval patterns. Additionally, introducing JWT-based authentication and real-time socket updates would elevate it closer to production-level standards."
-  }
-},
+  coreFeaturesOrKeySolutions: [
+    "⚡ Multi-Admin Login",
+    "⚡ Rental Listing Table",
+    "⚡ Approve / Reject / View",
+    "⚡ Admin Tracker",
+    "⚡ Responsive Layout",
+    "⚡ Optimized Re-renders"
+  ],
 
-  {
+  challengesAndLearnings:
+    "Keeping tracker updates smooth without causing extra renders required reducer-based state flow.",
+
+  testingAndFeedback:
+    "Tested actions, UI spacing, and cross-device responsiveness. Adjusted layouts based on feedback.",
+
+  deploymentOrFinalPrototype: {
+    isLive: true,
+    isLivegit: true,
+    link: "https://cabs-admin-next.vercel.app/dashboard",
+    github: "https://github.com/Shivani-Tekumudi/cabs_admin_next"
+  },
+
+  reflectionAndFutureScope:
+    "Plan to integrate real APIs, JWT authentication features."
+}
+
+}
+,
+
+ {
   id: "admin-expense-tracker",
   category: "developing",
   title: "Admin Expense Tracker Panel",
   role: "UI/UX Designer & Front-End Developer",
-  image: "/project/myplotpic-admin.jpg",
+  image: "/project/expense-tracker.svg",
   shortDesc:
-    "Designed and developed a responsive expense tracking dashboard with real-time insights and data visualization using React and Chart.js.",
+    "A simple expense tracking dashboard with charts, real-time updates, and persistent storage.",
   longDesc:
-    "Built an interactive admin panel for tracking income and daily expenses with visual insights using React and Chart.js. The dashboard features a circular expense breakdown chart, a bar chart for top expense categories, and a list of recent transactions. Focused on creating an intuitive, visually clean, and mobile-responsive interface that delivers both clarity and usability.",
+    "Designed and built a clean expense tracking panel using React and Chart.js. Users can add income/expenses, visualize spending patterns, and view recent transactions. The layout is structured for clarity and mobile responsiveness.",
+
   tools: ["React", "Chart.js", "TailwindCSS", "localStorage"],
   year: 2025,
 
-  projectDetails: {
-    overview:
-      "The Admin Expense Tracker Panel is a lightweight front-end application that allows users to log income and expenses while visualizing their spending patterns. It combines simple data entry with interactive charts to give users clear insights into their financial behavior. The project emphasizes functional design and real-time UI updates for a seamless experience.",
-    
-    researchAndPlanning:
-      "The planning began with defining the key goal — to make financial data intuitive through visuals. Identified three major components: the input form for transactions, the charts section for analytics, and the transaction history list.  A basic **flowchart** was created to map how data moves from input to visualization. Focused on balancing aesthetics with usability through consistent color contrast and clean typography.",
-    
-    architectureAndSetup:
-      "The project follows a simple component-based structure using React. State management is handled via useState and data persistence through localStorage. The folder structure separates components like `Form`, `Charts`, and `TransactionList`. React Chart.js was integrated for the circular (expense ratio) and bar (top categories) visualizations. CSS3 and utility classes from TailwindCSS ensured a modern responsive layout.",
-    
-    coreFeaturesOrKeySolutions: [
-      "•  **Add Income & Expense** – Users can record multiple transactions with category and amount details.",
-      "•  **Circular Expense Chart** – Displays a proportional breakdown of expenses by category using React Chart.js.",
-      "•  **Top Expense Bar Chart** – Highlights the most frequently spent categories over time.",
-      "•  **Recent Transactions List** – Provides a chronological view of all income and expense entries.",
-      "•  **Persistent Storage** – Uses localStorage to save user data between sessions.",
-      "•  **Responsive Layout** – Fully adaptable across devices with clean visual hierarchy and contrast-focused design."
-    ],
-    
-    challengesAndLearnings:
-      "The key challenge was ensuring data updates reflected instantly in charts without reloading the entire component tree. This was solved using controlled state management and isolated chart re-renders. Another learning was managing color palettes effectively to differentiate expense categories while maintaining visual harmony.",
-    
-    testingAndFeedback:
-      "Manually tested across different browsers and screen sizes. Verified chart responsiveness, input validation, and storage persistence. Collected feedback focused on improving color readability in light/dark themes and optimized the chart legend layout accordingly.",
-    
-    deploymentOrFinalPrototype: {
-      link: "https://expense-tracker-khy1j3pgw-shivani-tekumudis-projects.vercel.app/",
-      github: "https://github.com/Shivani-Tekumudi/Expense_Tracker"
-    },
-    
-    reflectionAndFutureScope:
-      "Planned future enhancements include integrating authentication for personalized dashboards, exporting expense reports as CSV/PDF, and using indexedDB or a backend API for larger datasets. Adding predictive analytics or AI-driven spending insights would further elevate this project for real-world scalability."
-  }
-},
+ projectDetails: {
+  problemStatement:
+    "Users needed a simple way to record expenses and instantly visualize where their money was going without relying on heavy apps.",
 
- {
+  systemFlow:
+    "User → Add Income/Expense → Data Saved → Charts Update → View Recent Transactions.",
+
+  myResponsibilities:
+    "Designed clean UI, built React components, integrated Chart.js, implemented localStorage sync, and optimized chart rendering.",
+
+  overview:
+    "A lightweight finance dashboard showing expense distribution and recent entries using interactive charts.",
+
+  researchAndPlanning:
+    "Planned three modules: input, charts, and history. Created a simple flow from input → visualization.",
+
+  architectureAndSetup:
+    "React components with localStorage persistence. Chart.js handles category and bar visuals. TailwindCSS ensures responsiveness.",
+
+  coreFeaturesOrKeySolutions: [
+    "⚡ Add Income & Expense",
+    "⚡ Category Pie Chart",
+    "⚡ Top Categories Bar Chart",
+    "⚡ Recent Transactions",
+    "⚡ Persistent Storage",
+    "⚡ Responsive Layout"
+  ],
+
+  challengesAndLearnings:
+    "Chart updates were tricky; solved by isolating state updates and controlling re-renders.",
+
+  testingAndFeedback:
+    "Checked responsiveness and data accuracy. Adjusted chart contrast for better readability.",
+
+  deploymentOrFinalPrototype: {
+    isLive: true,
+     isLivegit: true,
+    link: "https://expense-tracker-khy1j3pgw-shivani-tekumudis-projects.vercel.app/",
+    github: "https://github.com/Shivani-Tekumudi/Expense_Tracker"
+  },
+
+  reflectionAndFutureScope:
+    "Plans include authentication, data export, and migrating storage to IndexedDB."
+}
+
+}
+,
+
+{
   id: "enterprise-admin-panel",
   category: "developing",
   title: "Admin Panel",
   role: "UI/UX Designer & Front-End Developer",
-  image: "/project/myplotpic-admin.jpg",
+  image: "/project/myplotpic-admin.svg",
   shortDesc:
-    "Developed a secure enterprise-grade admin interface with authentication, dynamic dashboards, and intuitive data management workflows.",
+    "A structured admin panel with authentication, dashboards, and user management.",
   longDesc:
-    "Contributed to the development of a responsive admin panel for an enterprise project. Focused on creating an accessible, clean interface with secure login, data visualization modules, and modular dashboard components. Implemented reusable UI patterns and ensured pixel-perfect alignment with the company’s design system for consistent brand experience.",
+    "Built a modular admin interface using Next.js and TailwindCSS. Worked on secure login, dashboard layout, and user management sections. Focus was on clear UI structure, reliable components, and a layout aligned with enterprise design guidelines.",
 
   tools: ["React", "Next.js", "TailwindCSS", "Context API", "Framer Motion"],
   year: 2025,
 
   projectDetails: {
+  problemStatement:
+    "The company needed a structured admin interface to manage users, view dashboard metrics, and maintain consistent internal workflows.",
+
+  systemFlow:
+    "Admin → Login → Dashboard → Select Module → Perform CRUD / View Data → Save Updates.",
+
+  myResponsibilities:
+    "Built UI screens, created modular components, implemented authentication flow, and integrated analytics sections.",
+
+  overview:
+    "A scalable admin interface designed for internal management of users, analytics, and dashboard modules.",
+
+  researchAndPlanning:
+    "Mapped navigation and role requirements. Created wireframes to validate layout and reduce onboarding time.",
+
+  architectureAndSetup:
+    "Next.js routing, Context API for auth, TailwindCSS for layout consistency, and Chart.js for analytics.",
+
+  coreFeaturesOrKeySolutions: [
+    "⚡ Role-based Login",
+    "⚡ Dashboard Metrics",
+    "⚡ User Management",
+    "⚡ Data Control Panels",
+    "⚡ Responsive Layout",
+    "⚡ Reusable Component Architecture"
+  ],
+
+  challengesAndLearnings:
+    "Optimizing render-heavy sections required lazy loading and conditional rendering techniques.",
+
+  testingAndFeedback:
+    "Performed UI checks, authentication testing, and validated component responsiveness.",
+
+  deploymentOrFinalPrototype: {
+    isLive: false,
+     isLivegit: false,
+    link: "Private — company project (access restricted)",
+    github: "Private — source under NDA"
+  },
+
+  reflectionAndFutureScope:
+    "Future improvements include advanced analytics, dark mode, and deeper audit logging."
+}
+
+}
+,
+{
+  id: "eventer-events-platform",
+  category: "developing",
+  title: "Eventer — Events Listing Platform",
+  role: "UI/UX Designer & Front-End Developer",
+  image: "/project/eventer.svg",
+  shortDesc:
+    "A lightweight events browsing platform with search, date-based sorting, and a clean card-based layout.",
+  longDesc:
+    "Created a simple but effective events listing platform using a JSON dataset and jQuery. Designed the UI from scratch, built interactive filters, and implemented fast client-side search for event titles.",
+
+  tools: ["HTML", "CSS", "JavaScript", "jQuery", "JSON"],
+  year: 2024,
+
+  projectDetails: {
+    problemStatement:
+      "Users needed a fast and simple way to explore upcoming events without logging in or navigating a complex interface.",
+
+    systemFlow:
+      "Home → Events Page → Browse Cards → Search / Sort by Date → View Event Details.",
+
+    myResponsibilities:
+      "Designed the UI, created the card layout, implemented search and date sorting, and structured the JSON event dataset.",
+
     overview:
-      "The Admin Panel serves as the core internal system for administrators to authenticate, manage users, monitor platform activity, and handle various operational controls. My primary responsibility was to design and develop the front-end architecture that delivers high performance and clarity under complex data operations.",
-    
+      "A fully client-side event listing tool that lets users browse, filter, and search events instantly.",
+
     researchAndPlanning:
-      "Started with requirement mapping and UI flow diagrams to understand how different admin roles interact with system modules. Defined core actions such as authentication, data visualization, and CRUD management. Created **flowcharts and wireframes** to validate navigation hierarchy and reduce cognitive load for first-time users.",
-    
+      "Studied event listing platforms for minimal UI patterns. Planned card structure, sorting logic, and responsive grid layout.",
+
     architectureAndSetup:
-      "Built with React and Next.js to ensure optimized routing and scalability. Implemented a structured component hierarchy using container and presentational components. TailwindCSS and custom utility classes were used for layout and theme control. Context API managed global authentication states, and Framer Motion enhanced UI transitions. Data visualization sections used React Chart.js for clear analytics representation.",
-    
+      "Used JSON for event data, jQuery for DOM manipulation, and simple functions for filtering, sorting, and rendering cards.",
+
     coreFeaturesOrKeySolutions: [
-      "🔐 **Role-based Authentication** – Secure login system differentiating admin levels and permissions.",
-      "•  **Dashboard Overview** – Summarized key business or platform metrics in interactive visual blocks.",
-      "👥 **User Management** – Admins can view, edit, activate, or deactivate users through CRUD-enabled tables.",
-      "📦 **Content & Data Control** – Sections to monitor activity logs, manage entries, and trigger actions.",
-      "🎨 **Adaptive UI** – Maintains uniform design with responsive scaling across all screen sizes.",
-      "⚙️ **Reusable Components** – Developed modular UI components improving maintainability and scalability."
+      "⚡ Events displayed as clean, responsive cards",
+      "⚡ Sort by date (ascending or upcoming first)",
+      "⚡ Search by event title",
+      "⚡ JSON-driven — no backend",
+      "⚡ Fast filtering using jQuery",
+      "⚡ Fully custom-designed UI"
     ],
-    
+
     challengesAndLearnings:
-      "The main challenge was optimizing dashboard rendering with multiple data streams while maintaining responsiveness. Resolved this using conditional rendering and lazy loading for non-critical components. Learned how to balance performance and design fidelity under production constraints.",
-    
+      "Ensuring fast rendering while filtering multiple times with jQuery required optimizing the event card generation logic.",
+
     testingAndFeedback:
-      "Collaborated with QA and stakeholders for iterative testing cycles. Performed UI consistency tests, authentication validation, and stress testing for dashboard widgets. Incorporated feedback loops to refine navigation clarity and reduce redundant API calls.",
-    
+      "Tested responsiveness, search accuracy, date sorting logic, and UI clarity across devices.",
+
     deploymentOrFinalPrototype: {
-      link: "Private — company project (access restricted)",
-      github: "Private — source under NDA"
+      isLive: false,
+      link: "Deployed locally / static hosting",
+      github: "https://github.com/Shivani-Tekumudi/eventer_jquery"
     },
-    
+
     reflectionAndFutureScope:
-      "Potential future improvements include integrating advanced analytics dashboards, dark mode accessibility, and role-based audit logs. A move toward micro-frontend architecture could further enhance maintainability and feature isolation for larger enterprise teams."
+      "Future plans include category filters, a month-view calendar, and replacing jQuery with React or Next.js for scalability."
   }
-},
- {
+}
+
+
+,
+{
   id: "sass-dashboard-design",
   category: "designing",
   title: "SaaS Automation Dashboard Design",
   role: "UI/UX Designer",
-  image: "/project/design-test.jpg",
+  image: "/project/design-test.svg",
   shortDesc:
     "A clean and data-focused dashboard concept for automation testing platforms.",
   longDesc:
-    "A complete redesign of an outdated SaaS automation dashboard focusing on usability, modern data visualization, and accessibility. Designed to give QA engineers and product managers clear visibility of test runs, coverage, and performance metrics — all within a balanced, intuitive layout.",
+    "A redesign of an outdated SaaS automation dashboard focused on usability, modern visualization, and accessibility. Built to help QA engineers and managers track test runs, coverage, and performance metrics with clarity.",
   tools: ["Figma", "Illustrator"],
   year: 2025,
   projectDetails: {
+    problemStatement:
+      "QA teams faced difficulty navigating outdated dashboards overloaded with scattered metrics. There was no hierarchy, no structure, and performance insights were hard to interpret. The challenge was to convert a dense data system into a clean, intuitive dashboard that boosts clarity and decision-making.",
+    userFlow:
+      "Login → Dashboard Overview → Recent Test Runs → Drill-down to Failed Cases → Analyze Trends → Apply Filters → Export Insights",
+    systemFlow:
+      "User Input → System Fetches Test Data → Dashboard Renders KPIs & Charts → Filters Applied → Recalculated Data → Updated Visuals Displayed",
+    featureJustification:
+      "Analytics cards allow fast scanning of KPIs, trend charts help identify patterns, color-coded statuses reduce cognitive load, filters enable targeted insights, sidebar navigation improves structure, and light/dark themes support accessibility.",
+    roleAndResponsibilities:
+      "Handled UX research, dashboard architecture, layout design, UI visuals, color system, spacing rules, component modularity, and Figma prototype testing.",
+
     overview:
-      "This concept project reimagines an existing automation testing dashboard with a focus on clarity, efficiency, and modern design principles. The goal was to enhance user navigation and make complex test data digestible through structured UI and visual storytelling.",
-    researchAndPlanning:  
-      "Conducted heuristic analysis on traditional QA dashboards to identify pain points like cluttered layouts and poor hierarchy. Mapped out user roles (QA, DevOps, Manager) and defined their core needs — quick overview of test results, easy drill-down into failed cases, and transparent progress tracking.",
+      "This concept project reimagines an automation testing dashboard with an emphasis on clarity, efficiency, and modern visual storytelling.",
+    researchAndPlanning:
+      "Heuristic analysis revealed cluttered layouts and poor hierarchy in typical QA dashboards. Mapped out user roles and their needs — quick test overviews, drill-down into failures, and progress tracking.",
     architectureAndSetup:
-      "Created an organized component-based layout with a fixed sidebar for navigation, a modular card system for analytics, and a clean data visualization section for insights. Applied an 8pt grid and consistent spacing for a balanced interface. Used Figma auto-layout for scalable responsiveness.",
-   coreFeaturesOrKeySolutions: [
-  "• Overview dashboard with test summary and recent runs.",
-  "• Trend visualization using charts and success/failure ratios.",
-  "• Modular analytics cards for test cases, environments, and schedules.",
-  "• Color-coded status indicators and notification design for quick scanning.",
-  "• Smart filters for date range and test type.",
-  "• Dark and light theme prototypes to test accessibility and contrast.",
-],
+      "Built a component-based interface with a fixed sidebar, analytics cards, clean data visuals, auto-layout components, and an 8pt spacing grid.",
+    coreFeaturesOrKeySolutions: [
+      "⚡ Overview dashboard with test summary.",
+      "⚡ Trend visualization for success/failure ratios.",
+      "⚡ Modular cards for test cases & environments.",
+      "⚡ Color-coded test statuses.",
+      "⚡ Smart filters (date, type).",
+      "⚡ Dark/Light theme prototypes."
+    ],
     challengesAndLearnings:
-      "The primary challenge was designing for dense data without overwhelming the interface. Solved it through contrast balance, color prioritization, and card modularity — ensuring important KPIs remain prominent while secondary data stays visually lightweight.",
+      "Main challenge was displaying dense data without overwhelming users. Solved using contrast balance, color prioritization, and modular cards.",
     testingAndFeedback:
-      "Performed self-led usability sessions to test visual hierarchy and component clarity. Collected peer feedback on readability and spacing adjustments. Validated contrast ratios for accessibility compliance (WCAG AA).",
+      "Self usability testing done to validate hierarchy, readability, and accessibility (WCAG AA).",
     deploymentOrFinalPrototype: {
-      link: "N/A (Design Prototype Only)",
-      github: "N/A (Design Prototype Only)"
+      link: "https://www.figma.com/proto/BfOErYQLx6wHnuEv16y3EX/Portfloio---Dashboard?node-id=83-12761&t=9ZFaQ8t3EALDd5wa-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=98%3A2857",
+      github: "N/A"
     },
     reflectionAndFutureScope:
-      "Plan to extend this design into an interactive prototype with dashboard animation flows, dynamic chart transitions, and a responsive mobile layout to simulate real-world usability for SaaS users."
+      "Planned improvements include interactive charts, animated transitions."
   }
 }
 ,
@@ -192,165 +304,206 @@ export const projects = [
   category: "designing",
   title: "Real Estate Apartment Landing Page",
   role: "UI/UX Designer",
-  image: "/project/design-apartment-project.jpg",
+  image: "/project/design-apartment-project.svg",
   shortDesc:
-    "An elegant, high-converting landing page design for a modern apartment property.",
+    "An elegant landing page design for a modern apartment property.",
   longDesc:
-    "Designed a premium real estate landing page aimed at improving user engagement and lead generation. Focused on clear information hierarchy, visual trust elements, and strategic call-to-actions for booking and loan inquiry flows.",
+    "A premium apartment landing page designed for clarity, trust-building, and high conversions. It blends strong hierarchy, minimal visuals, and persuasive CTAs.",
   tools: ["Figma", "Illustrator"],
   year: 2025,
   projectDetails: {
-    overview:
-      "This concept project reimagines a real estate apartment landing page designed to attract potential buyers through a visually engaging and trust-driven layout. The goal was to highlight key amenities, project features, and financial offers while maintaining a luxurious and minimal aesthetic.",
-    researchAndPlanning:  
-      "Analyzed multiple real estate websites and user behavior patterns. Identified that users often drop off when the layout feels cluttered or lacks transparent financial details. Conducted competitive benchmarking to determine what content hierarchy and visual tone increase credibility and conversions.",
-    architectureAndSetup:
-      "Structured the layout with a hero banner featuring key highlights (price range, location, CTA). Followed by a modular section flow — About the Property → Amenities → Gallery → Loan & Offers → Testimonials → Contact Form. Designed a 12-column responsive grid system with balanced white space and warm accent tones for a professional yet homely appeal.",
-    coreFeaturesOrKeySolutions: [
-  "• Hero section with location, price range, and primary CTA (Book Visit / Enquire Now).",
-  "• Amenities grid displaying features like gym, pool, clubhouse, etc.",
-  "• Gallery section for property and interior previews.",
-  "• Interactive budget estimator and loan offer cards.",
-  "• Trust-building testimonials and developer credentials.",
-  "• Sticky CTA bar for quick actions on scroll (Call / Book Visit / Get Loan Info).",
-],
+    problemStatement:
+      "Real estate sites often overwhelm users with cluttered layouts and unclear pricing. The goal was to build a premium layout that maintains trust, clarity, and easy exploration to boost inquiries.",
+    userFlow:
+      "Hero → About → Amenities → Gallery → Offers → Testimonials → Contact Form",
+    systemFlow:
+      "User Scrolls → Section Loads → CTA Click → Form Submission → Confirmation",
+    featureJustification:
+      "Hero clarity reduces bounce, amenities showcase lifestyle, gallery builds emotional appeal, loan cards motivate leads, testimonials build trust, and sticky CTAs improve conversion.",
+    roleAndResponsibilities:
+      "Designed layout flow, visuals, spacing logic, UI components, color palette, and Figma prototype.",
 
+    overview:
+      "A high-trust apartment landing page created to highlight amenities, location details, and property features.",
+    researchAndPlanning:
+      "Analyzed competitor sites and identified drop-offs caused by cluttered layouts and unclear pricing sections.",
+    architectureAndSetup:
+      "Structured with a hero → amenities grid → gallery → loan/offer section → testimonials → inquiry form.",
+    coreFeaturesOrKeySolutions: [
+      "⚡ Hero with price & location.",
+      "⚡ Lifestyle amenities grid.",
+      "⚡ High-quality gallery.",
+      "⚡ Loan & offer cards.",
+      "⚡ Testimonials & trust badges.",
+      "⚡ Sticky CTA bar."
+    ],
     challengesAndLearnings:
-      "The main challenge was maintaining visual harmony while showcasing heavy information — amenities, pricing, and multiple offers. Solved by segmenting data into well-defined visual zones, using accent color for CTAs, and maintaining consistent typography rhythm to guide the user's eye naturally.",
+      "Balancing luxury visuals with heavy information required zoning and consistent typography.",
     testingAndFeedback:
-      "Conducted peer usability reviews to evaluate clarity and CTA visibility. Ensured responsive behavior through Figma constraints and Auto Layout. Verified contrast and text readability across multiple background tones for accessibility.",
+      "Peer reviews helped refine spacing and CTA clarity.",
     deploymentOrFinalPrototype: {
-      link: "N/A (Design Prototype Only)",
-      github: "N/A (Design Prototype Only)"
+      link: "https://www.figma.com/proto/XyW9PgZAT4PllXY9izVX6O/My-plot-pic?node-id=2413-4375&t=oEPMWeEuRIsKYJ1M-0&scaling=min-zoom&content-scaling=fixed&page-id=47%3A5&starting-point-node-id=2413%3A4375&show-proto-sidebar=1",
+      github: "https://github.com/Shivani-Tekumudi/eventer_jquery"
     },
     reflectionAndFutureScope:
-      "Plan to extend the project into a complete property portal concept, integrating interactive filters (budget, location, configuration) and a dashboard for lead tracking. Also aim to experiment with motion prototypes for CTA transitions and gallery animations."
+      "Future plans include dynamic filtering, micro-interactions, and motion prototypes."
   }
-},
-
-
-  {
+}
+,
+{
   id: "realestate-landingpage-flat",
   category: "designing",
   title: "Real Estate Flat Landing Page",
   role: "UI/UX Designer",
-  image: "/project/design-flat-project.jpg",
+  image: "/project/design-flat-project.svg",
   shortDesc:
-    "A sleek and conversion-focused landing page design for modern residential flats.",
+    "A sleek landing page design for modern flat listings.",
   longDesc:
-    "Designed a high-impact real estate landing page highlighting premium flat listings and lifestyle features. Focused on visual storytelling, clarity, and intuitive navigation to drive property inquiries and user engagement.",
+    "A conversion-oriented landing page designed for residential flat promotions, focusing on clarity, trust, and strong visuals.",
   tools: ["Figma", "Illustrator"],
   year: 2025,
   projectDetails: {
-    overview:
-      "This design project presents a modern landing page for a real estate brand promoting residential flats. The objective was to create a clean and aspirational interface that builds trust and simplifies the discovery process for potential homebuyers.",
-    researchAndPlanning:  
-      "Studied top-performing real estate platforms and user expectations when exploring flat listings. Observed that users value concise information, high-quality visuals, and transparent financial details. Designed the layout to keep key information — price range, amenities, and offers — above the fold for maximum retention.",
-    architectureAndSetup:
-      "Built a structured visual flow starting with a full-width hero banner featuring flat highlights (location, pricing, and CTA). Followed by modular sections — About the Project → Amenities Overview → Lifestyle & Interiors → Pricing & Offers → Testimonials → Contact Form. Utilized a 12-column responsive grid and consistent visual hierarchy to maintain readability and premium feel.",
-    coreFeaturesOrKeySolutions: [
-  "• Prominent hero section with quick access to price and location info.",
-  "• Amenities showcase highlighting flat interiors, nearby facilities, and lifestyle perks.",
-  "• Budget estimator and offer card section to display real-time promotions.",
-  "• Testimonials carousel for social proof.",
-  "• Sticky footer CTA (Enquire Now / Schedule Visit) for continuous engagement.",
-  "• Clean, mobile-friendly design optimized for conversion.",
-],
+    problemStatement:
+      "Flat buyers need clarity on pricing, visuals, and amenities, but most platforms overload them with details. The task was to design a streamlined flow with high visual appeal and clear content hierarchy.",
+    userFlow:
+      "Hero → About → Amenities → Interiors → Pricing → Testimonials → Contact",
+    systemFlow:
+      "Scroll → Content Reveal → CTA Interaction → Lead Form → Confirmation",
+    featureJustification:
+      "Hero improves clarity, amenities add lifestyle value, interiors attract emotions, testimonials build trust, and sticky footers drive continuous engagement.",
+    roleAndResponsibilities:
+      "Designed layout, visuals, grid structure, CTA placements, and complete responsive prototype.",
 
+    overview:
+      "A modern real estate landing page designed to attract flat buyers through clean visuals and structured content.",
+    researchAndPlanning:
+      "Studied real estate user expectations and optimized the layout to keep key info above the fold.",
+    architectureAndSetup:
+      "Hero → project highlights → amenities → pricing → testimonials → inquiry.",
+    coreFeaturesOrKeySolutions: [
+      "⚡ Hero with pricing & location.",
+      "⚡ Lifestyle amenities grid.",
+      "⚡ Interiors showcase.",
+      "⚡ Clear pricing section.",
+      "⚡ Testimonials carousel.",
+      "⚡ Sticky CTA footer."
+    ],
     challengesAndLearnings:
-      "The biggest challenge was balancing luxury visuals with dense informational content. Solved by introducing breathing space through modular design, subtle color palette, and a focus on typography consistency. Maintained strong contrast to ensure accessibility and legibility on both light and dark surfaces.",
+      "Balancing visuals with detailed property info required modular structuring.",
     testingAndFeedback:
-      "Performed peer design critiques to test flow, legibility, and user engagement. Refined hierarchy and CTA placements based on feedback. Used Figma Auto Layout and prototyping to simulate interactions and scrolling behavior across screen sizes.",
-    deployment: {
-      link: "N/A (Design Prototype Only)",
-      github: "N/A (Design Prototype Only)"
+      "Refinements were made to spacing and typography after peer reviews.",
+    deploymentOrFinalPrototype: {
+      link: "https://www.figma.com/proto/XyW9PgZAT4PllXY9izVX6O/My-plot-pic?node-id=1419-170&t=oEPMWeEuRIsKYJ1M-0&scaling=min-zoom&content-scaling=fixed&page-id=47%3A5&starting-point-node-id=1419%3A170&show-proto-sidebar=1",
+      github: "N/A"
     },
     reflectionAndFutureScope:
-      "Future improvements include adding an interactive map view, loan calculator micro-interactions, and a chatbot assistant for property guidance. Also plan to explore animation-based storytelling for hero banners to enhance engagement."
+      "Plan to add interactive maps and animated hero visuals."
   }
-},
-
- {
+}
+,
+{
   id: "realestate-landingpage-ag-plot",
   category: "designing",
   title: "Real Estate Agricultural Land Landing Page",
   role: "UI/UX Designer",
-  image: "/project/design-ag-land-project.jpg",
+  image: "/project/design-ag-land-project.svg",
   shortDesc:
-    "A clean, conversion-driven landing page designed to promote agricultural land listings with clarity and trust.",
+    "A clean, nature-inspired landing page for agricultural land listings.",
   longDesc:
-    "Designed an intuitive, nature-inspired landing page for agricultural land promotions. Focused on credibility, simplicity, and highlighting the value of investment plots through visuals and clear data presentation.",
+    "Designed to promote agricultural land through trust-building visuals, clarity, and structured information flow.",
   tools: ["Figma", "Illustrator"],
   year: 2025,
   projectDetails: {
-    overview:
-      "This design focuses on showcasing agricultural plots for investors and buyers interested in land acquisition. The goal was to create a user-friendly and visually grounded layout that conveys trust, transparency, and the long-term value of owning agricultural property.",
-    researchAndPlanning:  
-      "Researched how land buyers assess properties — focusing on clarity in location, pricing, soil information, and legal transparency. Analyzed user friction points on typical real estate websites, such as cluttered layouts and missing land specs. Designed the UI to emphasize essential metrics like acreage, soil type, accessibility, and investment benefits.",
-    architectureAndSetup:
-      "Structured the layout using a logical information flow: Hero Banner (with property highlights) → About the Land → Location Map → Key Features (Fertility, Irrigation, Accessibility) → Investment Benefits → Pricing & Offers → Contact Form. Maintained earthy tones and green highlights to reinforce the agricultural theme, using a consistent 12-column grid and modular spacing for visual balance.",
-    coreFeaturesOrKeySolutions: [
-  "• Hero section with striking aerial imagery and key highlights (acres, price range, location).",
-  "• Section for soil fertility and irrigation details for credibility.",
-  "• Interactive map showing nearby infrastructure and landmarks.",
-  "• Offer and pricing section with clear CTAs for inquiry.",
-  "• Testimonials and investor trust indicators.",
-  "• Responsive design optimized for readability across all devices.",
-],
+    problemStatement:
+      "Buyers struggle to understand soil details, land value, legal info, and location access. The challenge was to simplify technical land information into a clear, trustworthy design.",
+    userFlow:
+      "Hero → About Land → Location → Key Benefits → Pricing → Contact",
+    systemFlow:
+      "Scroll → Section Reveal → Map Interaction → CTA → Lead Submission",
+    featureJustification:
+      "Aerial visuals add context, soil data builds credibility, maps improve understanding, pricing sections motivate inquiries, and testimonials build trust.",
+    roleAndResponsibilities:
+      "Handled research, layout structure, color palette, iconography, spacing system, and prototyping.",
 
+    overview:
+      "A structured landing page designed for agricultural investors focusing on clarity and trust.",
+    researchAndPlanning:
+      "Researched buyer expectations like soil quality, irrigation, and legal clarity.",
+    architectureAndSetup:
+      "Hero → land overview → location map → investment highlights → pricing → inquiry form.",
+    coreFeaturesOrKeySolutions: [
+      "⚡ Aerial visuals.",
+      "⚡ Soil & irrigation details.",
+      "⚡ Interactive map.",
+      "⚡ Pricing & offers.",
+      "⚡ Investor testimonials.",
+      "⚡ Fully responsive."
+    ],
     challengesAndLearnings:
-      "One challenge was presenting technical data (like soil type and irrigation systems) without overwhelming users. Solved by using iconography, collapsible content sections, and data visualization for better comprehension. Ensured color palette reflected environmental authenticity while maintaining readability.",
+      "Main challenge was simplifying technical land data. Solved using iconography and collapsible sections.",
     testingAndFeedback:
-      "Prototyped in Figma and conducted informal usability tests with a small audience to validate hierarchy and clarity. Adjusted layout spacing, CTA colors, and section sequencing based on feedback for a smoother navigation experience.",
-    deployment: {
-      link: "N/A (Design Prototype Only)",
-      github: "N/A (Design Prototype Only)"
+      "Usability tests improved clarity and CTA placements.",
+    deploymentOrFinalPrototype: {
+      link: "https://www.figma.com/proto/XyW9PgZAT4PllXY9izVX6O/My-plot-pic?node-id=1790-2217&t=oEPMWeEuRIsKYJ1M-0&scaling=min-zoom&content-scaling=fixed&page-id=47%3A5&starting-point-node-id=1419%3A170&show-proto-sidebar=1",
+      github: "N/A"
     },
     reflectionAndFutureScope:
-      "Future plans include adding interactive data filters (by location, acreage, and price), drone video integration for property showcases, and embedding sustainability metrics to enhance investor confidence."
+      "Plans include drone video integration and animated storytelling."
   }
-},
-
+}
+,
 {
   id: "realestate-landingpage-plot-design",
   category: "designing",
   title: "Real Estate Plot Landing Page Design",
   role: "UI/UX Designer",
-  image: "/project/design-plot-project.jpg",
+  image: "/project/design-plot-project.svg",
   shortDesc:
-    "A clean, persuasive real estate landing page crafted to showcase residential plot listings and drive user inquiries.",
+    "A clean landing page designed to showcase residential plots.",
   longDesc:
-    "Designed a high-converting landing page for residential plots, focusing on trust, clarity, and easy exploration. Created with Figma to ensure grid precision, strong hierarchy, and seamless navigation for prospective buyers.",
+    "A high-conversion plot landing page designed for clarity, trust-building, and smooth exploration.",
   tools: ["Figma", "Illustrator"],
   year: 2025,
   projectDetails: {
-    overview:
-      "The Real Estate Plot Landing Page was created to simplify how potential buyers view and explore available plots. The goal was to build an intuitive, visually appealing interface that builds trust and communicates property value through structured storytelling and design clarity.",
-    researchAndPlanning:  
-      "Analyzed several real estate websites to identify gaps in user understanding — particularly around price transparency, amenities, and plot availability. Derived insights from competitor layouts and feedback from real users who prefer quick access to visuals and location details. The focus was on clear segmentation of data and motivating CTAs that push for inquiries.",
-    architectureAndSetup:
-      "The layout follows a linear scroll experience optimized for conversions — Hero Section with property highlights → Featured Plot Layout → Amenities Overview → Location Map → Pricing & Offer Details → Inquiry Form. The visual direction uses clean whites and accent colors with soft shadows for a modern and trustworthy appearance. Consistent grid structure and modular spacing ensure scalability across devices.",
-    coreFeaturesOrKeySolutions: [
-  "• Hero banner showcasing prime plot visuals and offer highlights.",
-  "• Sectioned layout with details like area size, location benefits, and ownership details.",
-  "• Interactive location map with nearby facilities (schools, transport, etc.).",
-  "• Transparent pricing and EMI options with strong call-to-action buttons.",
-  "• Customer testimonial area to enhance credibility.",
-  "• Fully responsive design ensuring optimal view on mobile and tablet.",
-],
+    problemStatement:
+      "Users looking for plots face confusion around layout maps, pricing, and location clarity. The task was to design a structured, trustworthy, easy-to-explore landing page.",
+    userFlow:
+      "Hero → Plot Layout → Amenities → Location Map → Pricing & EMI → Inquiry",
+    systemFlow:
+      "Scroll → Section Reveal → Map Interaction → CTA → Lead Capture",
+    featureJustification:
+      "Hero builds trust, plot layout clarifies visuals, amenities add lifestyle value, maps improve navigation, and pricing removes friction.",
+    roleAndResponsibilities:
+      "Designed the overall UX flow, visual style, grid, spacing, CTA strategy, and responsive prototype.",
 
+    overview:
+      "A layout designed to simplify plot research through visual storytelling and clear segmenting.",
+    researchAndPlanning:
+      "Analyzed user needs around transparency and layout previews.",
+    architectureAndSetup:
+      "Linear flow: hero → layout → amenities → map → pricing → inquiry.",
+    coreFeaturesOrKeySolutions: [
+      "⚡ Plot layout preview.",
+      "⚡ Amenities breakdown.",
+      "⚡ Interactive location map.",
+      "⚡ EMI options.",
+      "⚡ Testimonials.",
+      "⚡ Responsive layout."
+    ],
     challengesAndLearnings:
-      "The main challenge was to create a layout that could effectively balance large visuals with critical property data without cluttering. Resolved it by using grid segmentation and white space strategically. Another hurdle was designing strong yet minimal CTAs that blend naturally into the page flow while maintaining focus on conversion intent.",
+      "Balancing visuals with detailed data required strict spacing and modular components.",
     testingAndFeedback:
-      "Prototyped and tested design flow within Figma to ensure the clarity of CTAs and readability hierarchy. Feedback emphasized that the pricing and location sections were the most engaging, which validated the section prioritization strategy.",
-    deployment: {
-      link: "N/A (Design Prototype Only)",
-      github: "N/A (Design Prototype Only)"
+      "Prototype reviews confirmed the pricing + map sections as top-performing.",
+    deploymentOrFinalPrototype: {
+      link: "https://www.figma.com/proto/XyW9PgZAT4PllXY9izVX6O/My-plot-pic?node-id=2887-4361&t=oEPMWeEuRIsKYJ1M-0&scaling=min-zoom&content-scaling=fixed&page-id=47%3A5&starting-point-node-id=2887%3A4361&show-proto-sidebar=1",
+      github: "N/A"
     },
     reflectionAndFutureScope:
-      "Future improvements include adding a plot comparison feature, integration with Google Maps for live navigation, and a virtual walkthrough for showcasing layout plans interactively."
+      "Future upgrades include plot comparison and a virtual walkthrough."
   }
 }
+
+
 
 
  

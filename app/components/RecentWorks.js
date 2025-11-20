@@ -42,7 +42,7 @@ const [activeTab, setActiveTab] = useState(0);
                     projects.map((ele,idx) => {
                       if(ele.category=="developing")
                       return(
-                        <ProjectCard  key={idx} id={ele.id} img={ele.image} title={ele.title} role={ele.role}  desc={ele.shortDesc}/>
+                        <ProjectCard  key={idx} id={ele.id} img={ele.image} title={ele.title} role={ele.role}  desc={ele.shortDesc} btnTitle="Technical Breakdown"/>
                       )
                     })
                   }
@@ -60,7 +60,7 @@ const [activeTab, setActiveTab] = useState(0);
                     projects.map((ele,idx) => {
                       if(ele.category=="designing")
                       return(
-                       <ProjectCard  key={idx} id={ele.id} img={ele.image} title={ele.title} role={ele.role}  desc={ele.shortDesc}/>
+                       <ProjectCard  key={idx} id={ele.id} img={ele.image} title={ele.title} role={ele.role}  desc={ele.shortDesc} btnTitle="Case Study"/>
                       )
                     })
                   }

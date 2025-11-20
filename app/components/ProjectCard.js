@@ -3,7 +3,7 @@ import Link from "next/link";
 
 
 
-export default function ProjectCard({id,img,title,role,desc}){
+export default function ProjectCard({id,img,title,role,desc,btnTitle}){
     return(
         <div className="max-w-sm bg-transparentder border  border-accent rounded-lg shadow-lg ">
 <div className="m-3">
@@ -18,7 +18,7 @@ export default function ProjectCard({id,img,title,role,desc}){
                />
     </a></div>
     <div className="p-5">
-        <Link  href={`/projectdetails/${id}`}>
+        <Link  href={`/projectdetails/${id}`} prefetch={true}>
             <h5 className="mb-2 text-2xl font-bold tracking-tight text-grey">{title}</h5>
         </Link>
         <p className="mb-0 font-normal text-grey ">
@@ -29,7 +29,11 @@ export default function ProjectCard({id,img,title,role,desc}){
              <p className="mb-3 font-normal text-grey ">
            
            <b> Description</b>: {desc}</p>
-       
+            <div className="text-right pt-4">
+            <Link className="bg-brand shadow-xl rounded-full px-5 py-2 text-lg font-medium text-white hover:bg-surface hover:text-brand " href={`/projectdetails/${id}`} prefetch={true}>
+           {btnTitle}
+        </Link>
+       </div>
     </div>
 </div>
     )

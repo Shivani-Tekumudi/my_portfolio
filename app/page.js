@@ -6,16 +6,13 @@ import Projects from "./components/RecentWorks";
 import Contact from "./components/Contact";
 import AnimatedSection from "./components/AnimatedSection";
 import Hero from "./components/Hero";
-import Head from 'next/head';
+import ThemeToggle from "./components/ThemeToggle";
 
 export default function Home() {
   return (
 
     <>
-     <Head>
-       <title>Shivani-Tekumudi-Portfolio</title>
-        <meta name="description" content="My page description" />
-      </Head>
+ 
        <div className="w-full max-w-9xl mx-auto p-10  bg-main">
    
       <div className="lg:flex ">
@@ -37,7 +34,7 @@ Frontend Developer</h3>
      <h3 className="text-xl font-bold text-primary3">   Andhra Pradesh, India</h3>
 
 
-     <button className="btn btn-primary mt-6 ">Let’s work together</button>
+     <a href="#contact" className="btn btn-primary mt-6  text-center">Let’s work together</a>
     {/* </div> */}
 
   

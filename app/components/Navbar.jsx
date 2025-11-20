@@ -2,9 +2,14 @@
 
 import { useState,useEffect } from "react";
 import { Moon, moon, sun } from "lucide-react";
+import ThemeToggle from "./ThemeToggle";
 
 export default function Navbar(){
    const [active, setActive] = useState("home");
+   const subject = encodeURIComponent("Hiring inquiry: Frontend / UI role");
+  const body = encodeURIComponent(
+    `Hi Shivani,\n\nI'm interested in discussing a project/opportunity with you.\n\nProject summary:\n\nBudget:\nTimeline:\n\nRegards,`
+  );
 
   useEffect(() => {
     const sections = document.querySelectorAll("section");
@@ -85,9 +90,12 @@ export default function Navbar(){
         </a>
       ))}
 
-            <a href="" className="rounded-full px-3 py-2 text-base font-medium mode"><Moon size={24} className="" /></a>
+           <ThemeToggle />
             
-            <a href="#contact" className="btn-contact rounded-full px-5 py-2 text-lg font-medium text-white hover:bg-white/5 hover:text-white">Hire me</a>
+            <a  href="https://mail.google.com/mail/?view=cm&fs=1&to=shivani9668@gmail.com&su=Hiring%20Inquiry&body=Hi%20Shivani,"
+  target="_blank"
+  rel="noopener noreferrer"
+   className="btn-contact rounded-full px-5 py-2 text-lg font-medium text-white hover:bg-white/5 hover:text-white">Hire me</a>
             
           </div>
         </div>

@@ -56,7 +56,8 @@ export default function  Hero(){
          <a href="#projects" className="btn-contact rounded-full w-full px-5 py-2 text-lg font-medium text-white hover:bg-white/5 hover:text-white">My Works</a>
                   </motion.div>
                   <motion.div  variants={item}  className=" lg:mx-2 mt-5 sm:mt-0">
-         <a href="#contact" className="btn-contact rounded-full px-5 py-2 text-lg font-medium text-white hover:bg-white/5 hover:text-white"> 
+         <a  href="/Shivani_Resume.pdf"
+  download="Shivani_Resume.pdf"className="btn-contact rounded-full px-5 py-2 text-lg font-medium text-white hover:bg-white/5 hover:text-white"> 
          <Download className="inline"/><span>Download CV </span></a>
                   </motion.div>
 
