@@ -47,7 +47,7 @@ export default function  Hero(){
                       Hi</p>
                 <motion.h1
         variants={item}  className="text-4xl  lg:text-5xl font-semibold text-primary mb-5 mt-4">I’m Shivani </motion.h1>
-                <motion.p  variants={item} className="text-4xl  lg:text-5xl  text-primary font-semibold mb-5">UI/UX Designer & </motion.p>
+             
                 <motion.p
         variants={item} className="text-4xl  lg:text-5xl  text-primary font-semibold">Frontend Developer</motion.p>
         
