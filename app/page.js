@@ -26,8 +26,8 @@ export default function Home() {
     <Image src="/mypic.png" alt="mypic" width={460}
         height={290} className="my-2" />
     
-    <h3 className="text-xl/8 font-bold text-primary2">UI/UX Designer & <br/>
-Frontend Developer</h3>
+    <h3 className="text-xl/8 font-bold text-primary2">
+Frontend Developer (React + TypeScript) | UI-Focused Engineer</h3>
     
     <h5 className="text-lg/8 font-semibold text-secondary"> Based in: </h5>
  
