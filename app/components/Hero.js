@@ -49,7 +49,7 @@ export default function  Hero(){
         variants={item}  className="text-4xl  lg:text-5xl font-semibold text-primary mb-5 mt-4">I’m Shivani </motion.h1>
              
                 <motion.p
-        variants={item} className="text-4xl  lg:text-5xl  text-primary font-semibold">Frontend Developer</motion.p>
+        variants={item} className="text-4xl  lg:text-5xl  text-primary font-semibold">Frontend Developer  React & Next.js Specialist</motion.p>
         
                 <div className="grid sm:grid-cols-2 md:grid-cols-3  lg:grid-cols-2 xl:grid-cols-4 gap-0 mt-9">
                   <motion.div  variants={item}  className="">
