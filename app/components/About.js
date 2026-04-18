@@ -26,7 +26,11 @@ export default function About(){
          <div className="sm:px-6 lg:px-8">
         <h2 className="text-4xl  lg:text-3xl font-semibold text-primary mb-5 mt-4 mb-2">About Me</h2>
         <p className="text-light section-description text-2xl text-gray-600">
-          I’m Frontend developer & UI/UX Designer. I enjoy turning ideas into live, interactive experiences. From designing in Figma to developing fully functional interfaces, I focus on creating products that are clean, engaging, and easy to use.
+          I’m a Frontend Engineer with 4+ years of experience building 
+production-grade React and Next.js applications. I specialize in creating 
+high-performance, user-centric interfaces and optimizing dashboards that 
+handle 50,000+ transactions. Currently expanding into full-stack development 
+(Node.js, MongoDB) to build complete solutions end-to-end.
         </p>
          <h2 className="text-4xl  lg:text-3xl font-semibold text-primary mb-5 mt-5 mb-2">Education</h2>
 

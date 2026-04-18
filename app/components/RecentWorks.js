@@ -21,18 +21,18 @@ const [activeTab, setActiveTab] = useState(0);
          <div className="sm:px-6 lg:px-8">
         <h2 className="text-4xl  lg:text-3xl font-semibold text-primary mb-5 mt-4 mb-2">Recent Works</h2>
         <p className="text-light section-description text-2xl text-gray-600">
-          Each project I work on combines thoughtful design and functional development. I start by understanding the user flow, wireframing layouts in Figma, and crafting clean, modern interfaces. Once the design is finalized, I bring it to life focusing on performance, responsiveness, and a smooth user experience.
+         I approach every project by first understanding user needs, then architecting 
+scalable solutions. I focus on clean code, performance optimization, and responsive 
+design—bringing designs to life with both technical depth and user experience in mind.
         </p>
 
         <div className="pt-5"> 
          <Tabs>
         <TabList>
         <Tabtrigger index={0} activeTab={activeTab} onClick={() => handleClick(0)}>
-           Developing
+           Projects
         </Tabtrigger>
-  <Tabtrigger index={1} activeTab={activeTab} onClick={() => handleClick(1)}>
-           Designing
-        </Tabtrigger>
+  
         </TabList>
         <div className="pt-5">
               <TabContent index={0} activeTab={activeTab}>

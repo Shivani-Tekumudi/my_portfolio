@@ -27,7 +27,7 @@ export default function Home() {
         height={290} className="my-2" />
     
     <h3 className="text-xl/8 font-bold text-primary2">
-Frontend Developer | React & Next.js Specialist</h3>
+Frontend Engineer | React & Next.js Specialist</h3>
     
     <h5 className="text-lg/8 font-semibold text-secondary"> Based in: </h5>
  

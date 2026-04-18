@@ -49,15 +49,18 @@ export default function  Hero(){
         variants={item}  className="text-4xl  lg:text-5xl font-semibold text-primary mb-5 mt-4">I’m Shivani </motion.h1>
              
                 <motion.p
-        variants={item} className="text-4xl  lg:text-5xl  text-primary font-semibold">Frontend Developer  React & Next.js Specialist</motion.p>
+        variants={item} className="text-4xl  lg:text-5xl mb-5  text-primary font-semibold">Frontend Engineer  </motion.p>
+        <motion.p
+        variants={item} className="text-4xl  lg:text-5xl mb-5  text-primary font-semibold">React & Next.js Specialist  </motion.p>
+     
         
                 <div className="grid sm:grid-cols-2 md:grid-cols-3  lg:grid-cols-2 xl:grid-cols-4 gap-0 mt-9">
                   <motion.div  variants={item}  className="">
          <a href="#projects" className="btn-contact rounded-full w-full px-5 py-2 text-lg font-medium text-white hover:bg-white/5 hover:text-white">My Works</a>
                   </motion.div>
                   <motion.div  variants={item}  className=" lg:mx-2 mt-5 sm:mt-0">
-         <a  href="/Shivani_Resume.pdf"
-  download="Shivani_Resume.pdf" className="btn-contact rounded-full px-5 py-2 text-lg font-medium text-white hover:bg-white/5 hover:text-white"> 
+         <a  href="/shivani_T_resume.pdf"
+  download="shivani_T_resume.pdf" className="btn-contact rounded-full px-5 py-2 text-lg font-medium text-white hover:bg-white/5 hover:text-white"> 
          <Download className="inline"/><span>Download CV </span></a>
                   </motion.div>
 
